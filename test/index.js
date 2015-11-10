@@ -171,6 +171,103 @@ describe('is.sameType', function () {
   });
 }); 
 
+describe('is.string', function () {
+  it('should return true if passed argument type is a string', function(){
+    var myString = new String();
+    expect(is.string(myString)).to.be.true;
+    });
+  it('should return false is passed argument type is not a string', function() {
+    expect(is.string([])).to.be.false;
+    expect(is.string(23)).to.be.false;
+    expect(is.string(true)).to.be.false;
+    expect(is.string(false)).to.be.false; 
+  });
+}); 
+
+describe('is.char', function () {
+  it('should return true if passed argument type is a char', function(){
+    var myChar = 'a';
+    expect(is.char(myChar)).to.be.true;
+    });
+  it('should return false is passed argument type is not a char', function() {
+    expect(is.char([])).to.be.false;
+    expect(is.char('qsdqs')).to.be.false;
+    expect(is.char(23)).to.be.false;
+    expect(is.char(true)).to.be.false;
+    expect(is.char(false)).to.be.false; 
+  });
+}); 
+
+describe('is.undefined', function () {
+  it('should return true if passed argument type is undefined', function(){
+    var myParameter = undefined;
+    expect(is.undefined(myParameter)).to.be.true;
+    });
+  it('should return false if passed argument type is not undefined', function() {
+    expect(is.undefined(['value1','value2'])).to.be.false;
+    expect(is.undefined('qsdqs')).to.be.false;
+    expect(is.undefined(23)).to.be.false;
+    expect(is.undefined(true)).to.be.false;
+    expect(is.undefined(false)).to.be.false; 
+  });
+}); 
+
+
+describe('is.under', function () {
+  it('should return true if value1 under value2', function(){
+    var value1 = 2;
+    var value2 = 3;
+    expect(is.number(value1)).to.be.true;
+    expect(is.number(value2)).to.be.true;
+    expect(is.under(value1,value2)).to.be.true;
+    });
+  it('should return false if value1 is not under value2', function() {
+    var value1 = 2;
+    var value2 = 3;
+    expect(is.number(value1)).to.be.true;
+    expect(is.number(value2)).to.be.true;
+    expect(is.under(value2,value1)).to.be.false;
+  });
+}); 
+
+
+describe('is.positive', function () {
+  it('should return true if passed argument is positive', function(){
+    var value = 1;
+    expect(is.number(value)).to.be.true;
+    expect(is.positive(value)).to.be.true;
+    });
+  it('should return false if passed argument is not positive', function() {
+    var value = -1;
+    expect(is.number(value)).to.be.true;
+    expect(is.positive(value)).to.be.false;
+  });
+}); 
+
+describe('is.negative', function () {
+  it('should return true if passed argument is negative', function(){
+    var value = -1;
+    expect(is.number(value)).to.be.true;
+    expect(is.negative(value)).to.be.true;
+    });
+  it('should return false if passed argument is not negative', function() {
+    var value = 1;
+    expect(is.number(value)).to.be.true;
+    expect(is.negative(value)).to.be.false;
+  });
+}); 
+
+
+  
+
+
+
+
+
+
+
+
+
 
 
 
